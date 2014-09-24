@@ -74,7 +74,7 @@ function getRadians(degrees){
 This function calculates the distance between 2 points
 We convert the differences in degrees to radians since javascript uses radians in its trig functions
 
-This solution follows the haversine calculation, where we relate the 
+This solution follows the haversine calculation for the distance between two points on a sphere
 */
 function calculateDistance(point1,point2){
   var earthRadius = 3959; //Radius of earth

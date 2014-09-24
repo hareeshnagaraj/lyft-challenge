@@ -78,12 +78,13 @@ This solution follows the haversine calculation, where we relate the
 */
 function calculateDistance(point1,point2){
   var earthRadius = 3959; //Radius of earth
-  var point1Latitude = point1[0];
-  var point1Longitude = point1[1];
-  var point2Latitude = point2[0];
-  var point2Longitude = point2[1];
+  var point1Latitude = locationMap[point1][0];
+  var point1Longitude = locationMap[point1][1];
+  var point2Latitude = locationMap[point2][0];
+  var point2Longitude = locationMap[point2][1];
   var deltaLat = getRadians(point2Latitude - point1Latitude); 
   var deltaLong = getRadians(point2Longitude - point1Longitude);
+  // console.log(point1)
 
   var intermediate = Math.sin(deltaLat/2)*Math.sin(deltaLat/2) + Math.cos(getRadians(point1Latitude))*Math.cos(getRadians(point2Latitude))*Math.sin(deltaLong/2)*Math.sin(deltaLong/2);
   var distance = 2 * earthRadius * Math.atan2(Math.sqrt(intermediate),Math.sqrt(1 - intermediate));
